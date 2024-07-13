@@ -18,7 +18,7 @@ abstract class BaseFragment<VB: ViewBinding>(@LayoutRes private val layoutRes: I
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DataBindingUtil.setContentView(requireActivity(), layoutRes)
+        _binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
 
