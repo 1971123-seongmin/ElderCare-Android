@@ -16,7 +16,6 @@ import com.example.elder_care.feature.home.HomeFragment
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private lateinit var navController: NavController
-    private lateinit var homeFragment: HomeFragment
 
     override fun setLayout() {
         setBottomNavigation()
