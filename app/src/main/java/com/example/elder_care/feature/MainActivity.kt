@@ -1,4 +1,4 @@
-package com.example.elder_care.feature.home
+package com.example.elder_care.feature
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

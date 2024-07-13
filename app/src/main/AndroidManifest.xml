@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Elder_Care"
         tools:targetApi="31">
         <activity
-            android:name=".feature.home.MainActivity"
+            android:name=".feature.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
