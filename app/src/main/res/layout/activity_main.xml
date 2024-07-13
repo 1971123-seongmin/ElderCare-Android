@@ -20,9 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation_bar"
-
-            />
+            app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation_bar" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/main_bottom_navigation_bar"
