@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- title_semi_bold_36 -->
+    <style name="title_semibold_36">
+        <item name="android:fontFamily">@font/notosans_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <!-- title_medium_36 -->
+    <style name="title_medium_36">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <!-- title_medium_24 -->
+    <style name="title_medium_24">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- paragraph_bold_17 -->
+    <style name="paragraph_semibold_17">
+        <item name="android:fontFamily">@font/notosans_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- paragraph_medium_17 -->
+    <style name="paragraph_medium_17">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- paragraph_medium_14 -->
+    <style name="paragraph_medium_14">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- paragraph_medium_12 -->
+    <style name="paragraph_medium_12">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

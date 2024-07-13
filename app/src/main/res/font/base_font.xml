@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--medium-->
+    <font
+        android:font="@font/notosans_medium"
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        app:font="@font/notosans_medium"
+        app:fontStyle="normal"
+        app:fontWeight="500"/>
+
+    <!--semibold-->
+    <font
+        android:font="@font/notosans_semibold"
+        android:fontStyle="normal"
+        android:fontWeight="600"
+        app:font="@font/notosans_semibold"
+        app:fontStyle="normal"
+        app:fontWeight="600"/>
+
+
+</font-family>
