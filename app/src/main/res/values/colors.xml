@@ -2,7 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="whiteF3">#F3F5F6</color>
+
+    <!-- 배경 색-->
+    <color name="bg_white">#FFFFFFFF</color>
+    <color name="bg_white_F3">#F3F5F6</color>
+    <color name="bg_gray">#4D000000</color>
 
     <!-- main color & subcolor 메인 버튼 컬러 -->
     <color name="green90">#E617C1A5</color>
@@ -13,15 +17,15 @@
 
 
     <!-- Button -->
-    <color name="buttonGreen">#16AF96</color>
+    <color name="button_green">#16AF96</color>
 
     <!-- accent color ( 활동내역 표시) -->
-    <color name="accentOrange">#F27A5E</color>
-    <color name="accentYellow">#F2C572</color>
-    <color name="accentPurple">#F2C572</color>
-    <color name="accentBlue">#1790BF</color>
+    <color name="accent_orange">#F27A5E</color>
+    <color name="accent_yellow">#F2C572</color>
+    <color name="accent_purple">#F2C572</color>
+    <color name="accent_blue">#1790BF</color>
 
     <!-- text color -->
-    <color name="textBlack">#1F1F1F</color>
-    <color name="textGreen">#E617C1A5</color>
+    <color name="text_black">#1F1F1F</color>
+    <color name="text_green">#E617C1A5</color>
 </resources>
