@@ -1,6 +1,7 @@
 package com.example.cleanarchitecturestudy.core.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -16,4 +17,8 @@ abstract class BaseActivity<VB: ViewBinding>(@LayoutRes private val layoutRes: I
     }
 
     abstract fun setLayout()
+
+    protected fun makeToast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
 }
