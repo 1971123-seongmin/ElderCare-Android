@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="titleText"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/toolbar_home_back_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:src="@drawable/ic_home_toolbar_back"/>
+
+        <TextView
+            android:id="@+id/toolbar_home_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{titleText}"
+            android:textSize="20sp"
+            android:includeFontPadding="false"
+            android:textFontWeight="500"
+            style="@style/paragraph_medium_14"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/toolbar_home_menu_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_home_menu"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>
