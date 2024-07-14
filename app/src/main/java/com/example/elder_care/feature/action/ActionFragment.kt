@@ -5,18 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.cleanarchitecturestudy.core.ui.BaseFragment
 import com.example.elder_care.R
+import com.example.elder_care.databinding.FragmentActionBinding
 
-class ActionFragment : Fragment() {
+class ActionFragment : BaseFragment<FragmentActionBinding>(R.layout.fragment_action) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setLayout() {
+        setToolbar()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_action, container, false)
+    private fun setToolbar() {
+        binding.titleText = "활동"
     }
 }
