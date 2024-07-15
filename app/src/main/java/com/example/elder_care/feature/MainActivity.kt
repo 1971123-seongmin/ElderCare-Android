@@ -100,6 +100,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
                         val device = intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
                         val deviceName = device?.name
                         val deviceHardwareAddress = device?.address
+                        Log.d("로그", "deviceName: $deviceName")
                         if (deviceName != null && deviceHardwareAddress != null) {
                             adapter[deviceName] = deviceHardwareAddress
                         }

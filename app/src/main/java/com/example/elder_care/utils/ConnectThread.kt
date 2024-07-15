@@ -14,83 +14,82 @@ class ConnectThread(
     private val myUUID: UUID,
     private val device: BluetoothDevice,
 ) : Thread() {
+
     companion object {
-        private const val TAG = "CONNECT_THREAD"
+        private const val TAG = "BluetoothService"
     }
 
-    // BluetoothDevice 로부터 BluetoothSocket 획득
-    private val connectSocket: BluetoothSocket? by lazy(LazyThreadSafetyMode.NONE) {
-        device.createRfcommSocketToServiceRecord(myUUID)
-    }
+    private var bluetoothSocket: BluetoothSocket? = null
+    private lateinit var inputStream: InputStream
+    private lateinit var outputStream: OutputStream
 
     override fun run() {
+        // 소켓 연결 시도
         try {
-            // 연결 수행
-            connectSocket?.connect()
-            connectSocket?.let {
-                val connectedThread = ConnectedThread(bluetoothSocket = it)
-                connectedThread.start()
-            }
-        } catch (e: IOException) { // 기기와의 연결이 실패할 경우 호출
-            connectSocket?.close()
-            throw Exception("연결 실패")
-        }
-    }
-
-    // 블루투스 연결 취소, 소켓 닫음
-    fun cancel() {
-        try {
-            connectSocket?.close()
+            bluetoothSocket = device.createRfcommSocketToServiceRecord(myUUID)
+            bluetoothSocket?.connect()
+            Log.d(TAG, "Socket connected")
+            manageConnectedSocket(bluetoothSocket!!)
         } catch (e: IOException) {
-            Log.d(TAG, e.message.toString())
+            Log.e(TAG, "Socket connection failed", e)
+            try {
+                bluetoothSocket?.close()
+            } catch (closeException: IOException) {
+                Log.e(TAG, "Failed to close socket", closeException)
+            }
         }
     }
 
-    // Bluetooth 기기와 연결된 후 데이터 통신 수행
-    private inner class ConnectedThread(private val bluetoothSocket: BluetoothSocket) : Thread() {
-        private lateinit var inputStream: InputStream
-        private lateinit var outputStream: OutputStream
+    // 연결된 소켓을 관리하고 데이터 수신을 담당하는 메서드
+    private fun manageConnectedSocket(socket: BluetoothSocket) {
+        try {
+            inputStream = socket.inputStream
+            outputStream = socket.outputStream
 
-        init {
-            try {
-                inputStream = bluetoothSocket.inputStream
-                outputStream = bluetoothSocket.outputStream
-            } catch (e: IOException) {
-                Log.d(TAG, e.message.toString())
-            }
-        }
-
-        override fun run() {
+            // 데이터 수신을 위한 무한 루프
             val buffer = ByteArray(1024)
             var bytes: Int
 
             while (true) {
                 try {
-                    // 데이터 받기(읽기)
                     bytes = inputStream.read(buffer)
-                    Log.d(TAG, bytes.toString())
-                } catch (e: Exception) {
-                    Log.d(TAG, "기기와의 연결이 끊겼습니다.")
+                    val receivedMessage = String(buffer, 0, bytes)
+                    Log.d(TAG, "Received: $receivedMessage")
+
+                    // 여기서 receivedMessage를 UI나 다른 곳으로 전달할 수 있음
+
+                } catch (e: IOException) {
+                    Log.e(TAG, "Error reading from input stream", e)
                     break
                 }
             }
-        }
-
-        fun write(bytes: ByteArray) {
+        } catch (e: IOException) {
+            Log.e(TAG, "Error managing connected socket", e)
+        } finally {
             try {
-                // 데이터 전송
-                outputStream.write(bytes)
+                socket.close()
             } catch (e: IOException) {
-                Log.d(TAG, e.message.toString())
+                Log.e(TAG, "Failed to close socket", e)
             }
         }
+    }
 
-        fun cancel() {
-            try {
-                bluetoothSocket.close()
-            } catch (e: IOException) {
-                Log.d(TAG, e.message.toString())
-            }
+    // 데이터를 전송하는 메서드
+    fun write(data: ByteArray) {
+        try {
+            outputStream.write(data)
+            Log.d(TAG, "Sent: ${String(data)}")
+        } catch (e: IOException) {
+            Log.e(TAG, "Error writing to output stream", e)
+        }
+    }
+
+    // 연결을 종료하는 메서드
+    fun cancel() {
+        try {
+            bluetoothSocket?.close()
+        } catch (e: IOException) {
+            Log.e(TAG, "Failed to close socket", e)
         }
     }
 }
