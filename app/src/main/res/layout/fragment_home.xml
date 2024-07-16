@@ -85,6 +85,27 @@
                     app:layout_constraintStart_toStartOf="@+id/home_profile_iv"
                     app:layout_constraintTop_toBottomOf="@+id/home_profile_iv" />
 
+                <Button
+                    android:id="@+id/home_find_bluetooth_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="블루투스 켜기"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/home_date_tv"
+                    app:layout_constraintStart_toEndOf="@+id/home_date_tv"
+                    app:layout_constraintTop_toTopOf="@+id/home_date_tv" />
+
+                <Button
+                    android:id="@+id/home_get_bluetooth_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="페어링 목록 검색"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+
                 <ImageView
                     android:id="@+id/home_plus_iv"
                     android:layout_width="wrap_content"
