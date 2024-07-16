@@ -50,20 +50,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         Manifest.permission.RECORD_AUDIO
     )
 
-    // 블루투스 관리
-    private val bluetoothManager: BluetoothManager by lazy {
-        getSystemService(BluetoothManager::class.java)
-    }
-
-    // 모든 Bluetooth 상호작용의 진입점
-    private val bluetoothAdapter: BluetoothAdapter? by lazy {
-        bluetoothManager.adapter
-    }
-    private val adapter = mutableMapOf<String, String>()
-
-    private lateinit var broadcastReceiver: BroadcastReceiver
-    private lateinit var intentFilter : IntentFilter
-
     private lateinit var navController: NavController
 
     override fun setLayout() {
