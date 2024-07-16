@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter
 import android.widget.CursorTreeAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -68,20 +69,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         checkPermission(permissions)
 
         // Bluetooth 활성화 요청
-        setActivate()
+        //setActivate()
 
         // 페어링된 디바이스 검색
-        getPairedDevices()
+        //getPairedDevices()
 
         // 주변 기기 검색
-        findDevice()
+        //findDevice()
 
         setBottomNavigation()
-        isBluetoothSupport()
+        //isBluetoothSupport()
 
 
         // 블루투스 기기 검색 브로드캐스트
-        setupBroadcastReceiver()
+        //setupBroadcastReceiver()
 
         Log.d("로그", "uuid : ${getUUID(this)}")
     }
@@ -229,21 +230,41 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         navController.navigate(R.id.homeFragment)
     }
 
-    private fun checkPermission(permissionList: List<String>) {
-        val requestList = ArrayList<String>()
-
-        // 권한 허용여부 확인
-        for (permission in permissionList) {
-            if (ActivityCompat.checkSelfPermission(this, permission)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
-                requestList.add(permission)
+    // 권한 미 허용시 다이얼로그 표시 함수
+    private fun permissionDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setMessage("앱 사용을 위해 필수인 근처, 마이크 및 위치 권한을 허용해 주세요.")
+            setPositiveButton("설정으로 이동") { dialog, which ->
+                // 설정 화면으로 이동
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                val uri = Uri.fromParts("package", packageName, null)
+                intent.data = uri
+                startActivity(intent)
             }
+            setNegativeButton("취소") { dialog, which ->
+                makeToast("권한을 허용하지 않으면 앱 실행이 불가능합니다.")
+                dialog.dismiss()
+                finish()
+            }
+            setTitle("권한 요청")
+            setCancelable(false) // 다이얼로그 바깥 영역을 터치해도 닫히지 않도록 설정
+            create()
+            show()
+        }
+    }
+
+    private fun checkPermission(permissionList: List<String>) {
+
+        val deniedPermissions = permissions.filter   {
+            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_DENIED
         }
 
-        if (requestList.isNotEmpty()) {
-            ActivityCompat.requestPermissions(this, requestList.toTypedArray(), REQUEST_PERMISSIONS)
-            false // 권한 요청 필요, 즉시 false 반환
+        if (deniedPermissions.isNotEmpty()) {
+            Log.d("권한", "권한 거부됨, $deniedPermissions")
+            ActivityCompat.requestPermissions(this, deniedPermissions.toTypedArray(), REQUEST_PERMISSIONS)
+        } else {
+            setActivate()
         }
     }
 
@@ -253,31 +274,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        if (requestCode == REQUEST_PERMISSIONS) {
-
-            val deniedPermission = ArrayList<String>()
-
-            // 사용자가 거부한 권한을 찾음
-            for ((index, result) in grantResults.withIndex()) {
-                if (result == PackageManager.PERMISSION_DENIED) {
-                    deniedPermission.add(permissions[index])
-                }
-            }
-
-            if (deniedPermission.isNotEmpty()) {
-                for (permission in deniedPermission) {
-                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
-
-                       makeToast("앱 사용을 위해 필수인 근처, 마이크 및 위치 권한을 허용해 주세요.")
-
-                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                        val uri = Uri.fromParts("package", packageName, null)
-                        intent.data = uri
-                        startActivity(intent)
-                        return
-                    }
-                }
+        when (requestCode) {
+            REQUEST_PERMISSIONS -> {
+                permissionDialog()
             }
         }
     }
