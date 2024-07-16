@@ -1,6 +1,5 @@
-package com.example.elder_care.utils
+package com.example.elder_care.utils.bluetooth
 
-import android.Manifest
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
@@ -9,12 +8,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.content.pm.PackageManager
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import java.util.UUID
 
 class BluetoothManager(private val context: Context) {

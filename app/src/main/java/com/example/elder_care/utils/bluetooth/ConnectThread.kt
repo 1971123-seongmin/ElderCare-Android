@@ -1,4 +1,4 @@
-package com.example.elder_care.utils
+package com.example.elder_care.utils.bluetooth
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

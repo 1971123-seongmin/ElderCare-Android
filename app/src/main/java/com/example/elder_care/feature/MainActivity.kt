@@ -1,41 +1,20 @@
 package com.example.elder_care.feature
 
 import android.Manifest
-import android.app.Activity
-import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothManager
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.CursorTreeAdapter
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.bumptech.glide.util.Util
 import com.example.cleanarchitecturestudy.core.ui.BaseActivity
 import com.example.elder_care.R
 import com.example.elder_care.databinding.ActivityMainBinding
-import com.example.elder_care.feature.home.HomeFragment
-import com.example.elder_care.utils.ConnectThread
-import java.util.UUID
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 

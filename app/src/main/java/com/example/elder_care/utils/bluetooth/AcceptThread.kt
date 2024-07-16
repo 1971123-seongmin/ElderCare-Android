@@ -1,4 +1,4 @@
-package com.example.elder_care.utils
+package com.example.elder_care.utils.bluetooth
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothServerSocket
