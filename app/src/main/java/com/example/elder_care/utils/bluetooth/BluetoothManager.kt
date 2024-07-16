@@ -17,6 +17,7 @@ import java.util.UUID
 class BluetoothManager(private val context: Context) {
 
     private val REQUEST_ENABLE_BT=1
+    private val adapter = mutableMapOf<String, String>()
 
     private val bluetoothManager: BluetoothManager by lazy {
         context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
@@ -26,10 +27,14 @@ class BluetoothManager(private val context: Context) {
         bluetoothManager.adapter
     }
 
-    private val adapter = mutableMapOf<String, String>()
-
     private lateinit var broadcastReceiver: BroadcastReceiver
     private lateinit var intentFilter: IntentFilter
+    private lateinit var bluetoothDataViewModel: BluetoothDataViewModel
+
+    // BluetoothDataViewModel 설정
+    fun setViewModel(viewModel: BluetoothDataViewModel) {
+        bluetoothDataViewModel = viewModel
+    }
 
     init {
         setupBroadcastReceiver()
@@ -112,7 +117,7 @@ class BluetoothManager(private val context: Context) {
                 }
                 try {
                     val uuid = UUID.fromString("00001101-0000-1000-8000-70dc7c4fffec5b05")
-                    val thread = ConnectThread(uuid, device)
+                    val thread = ConnectThread(uuid, device, bluetoothDataViewModel)
                     thread.run()
                     makeToast("${device.name}과 연결되었습니다.")
                 } catch (e: Exception) {
