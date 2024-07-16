@@ -9,7 +9,7 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.util.UUID
 
-// 블루투스에서 서버의 역할을 수행하는 스레드
+// 블루투스 통신에서 서버의 역할을 수행하는 스레드
 class AcceptThread(private val bluetoothAdapter: BluetoothAdapter): Thread() {
 
     private lateinit var serverSocket: BluetoothServerSocket
