@@ -57,10 +57,11 @@ class ConnectThread(
             while (true) {
                 try {
                     bytes = inputStream.read(buffer)
+
                     val receivedMessage = String(buffer, 0, bytes)
                     Log.d(TAG, "Received: $receivedMessage")
 
-                    viewModel.addConnectedDeviceData(receivedMessage)
+                    //viewModel.addConnectedDeviceData(receivedMessage)
                 } catch (e: IOException) {
                     Log.e(TAG, "Error reading from input stream", e)
                     break
@@ -70,6 +71,7 @@ class ConnectThread(
             Log.e(TAG, "Error managing connected socket", e)
         } finally {
             try {
+                Log.e(TAG, "finally socket.close")
                 socket.close()
             } catch (e: IOException) {
                 Log.e(TAG, "Failed to close socket", e)

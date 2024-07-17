@@ -116,9 +116,9 @@ class BluetoothManager(private val context: Context) {
                     adapter.cancelDiscovery()
                 }
                 try {
-                    val uuid = UUID.fromString("00001101-0000-1000-8000-70dc7c4fffec5b05")
+                    val uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
                     val thread = ConnectThread(uuid, device, bluetoothDataViewModel)
-                    thread.run()
+                    thread.start()
                     makeToast("${device.name}과 연결되었습니다.")
                 } catch (e: Exception) {
                     makeToast("기기의 전원이 꺼져 있습니다. 기기를 확인해주세요.")
@@ -138,8 +138,11 @@ class BluetoothManager(private val context: Context) {
                 .setItems(deviceNames) { dialog, which ->
                     val selectedDevice = pairedDevices.elementAtOrNull(which)
                     selectedDevice?.let { device ->
+                        dialog.dismiss()
                         connectDevice(device)
                     }
+                }
+                .setNegativeButton("취소") { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
