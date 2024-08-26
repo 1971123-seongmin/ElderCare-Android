@@ -8,7 +8,7 @@
         android:background="@color/bg_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.MainActivity">
+        tools:context=".ui.MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_nav_host_fragment"

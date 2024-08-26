@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F4F4F4"
-        tools:context=".feature.community.CommunityFragment">
+        tools:context=".ui.community.CommunityFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView

@@ -1,4 +1,4 @@
-package com.example.elder_care.feature.splash
+package com.example.elder_care.ui.splash
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

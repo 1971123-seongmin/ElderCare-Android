@@ -1,4 +1,4 @@
-package com.example.elder_care.feature
+package com.example.elder_care.ui
 
 import android.Manifest
 import android.content.Intent
@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.cleanarchitecturestudy.core.ui.BaseActivity
+import com.example.elder_care.base.BaseActivity
 import com.example.elder_care.R
 import com.example.elder_care.databinding.ActivityMainBinding
 

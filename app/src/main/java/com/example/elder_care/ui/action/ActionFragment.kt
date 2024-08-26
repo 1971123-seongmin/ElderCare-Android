@@ -1,11 +1,6 @@
-package com.example.elder_care.feature.action
+package com.example.elder_care.ui.action
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.example.cleanarchitecturestudy.core.ui.BaseFragment
+import com.example.elder_care.base.BaseFragment
 import com.example.elder_care.R
 import com.example.elder_care.databinding.FragmentActionBinding
 

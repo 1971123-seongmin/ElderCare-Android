@@ -1,6 +1,5 @@
-package com.example.elder_care.core.ui
+package com.example.elder_care.base
 
-import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 
 class BaseDiffCallback<T : Any>(

@@ -1,4 +1,4 @@
-package com.example.elder_care.core.ui
+package com.example.elder_care.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 
 abstract class BaseAdapter<T, VB : ViewDataBinding>(
     diffCallback: DiffUtil.ItemCallback<T>

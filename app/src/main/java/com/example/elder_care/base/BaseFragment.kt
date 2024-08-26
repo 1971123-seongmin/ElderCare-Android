@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturestudy.core.ui
+package com.example.elder_care.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

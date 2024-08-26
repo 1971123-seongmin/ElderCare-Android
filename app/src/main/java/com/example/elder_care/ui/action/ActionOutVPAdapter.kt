@@ -1,9 +1,8 @@
-package com.example.elder_care.feature.action
+package com.example.elder_care.ui.action
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import kotlin.jvm.internal.RepeatableContainer
 
 class ActionOutVPAdapter(
     private val fragmentList: ArrayList<Fragment>,

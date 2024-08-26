@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.elder_care.feature.home.HomeFragment"
+        android:name="com.example.elder_care.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/communityFragment"
-        android:name="com.example.elder_care.feature.community.CommunityFragment"
+        android:name="com.example.elder_care.ui.community.CommunityFragment"
         android:label="CommunityFragment"
         tools:layout="@layout/fragment_community"/>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.elder_care.feature.settings.SettingsFragment"
+        android:name="com.example.elder_care.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/actionFragment"
-        android:name="com.example.elder_care.feature.action.ActionFragment"
+        android:name="com.example.elder_care.ui.action.ActionFragment"
         android:label="fragment_action"
         tools:layout="@layout/fragment_action" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.elder_care.feature.home
+package com.example.elder_care.ui.home
 
 import android.util.Log
 import android.view.Menu
@@ -9,7 +9,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
-import com.example.cleanarchitecturestudy.core.ui.BaseFragment
+import com.example.elder_care.base.BaseFragment
 import com.example.elder_care.R
 import com.example.elder_care.databinding.FragmentHomeBinding
 import com.example.elder_care.utils.bluetooth.BluetoothDataViewModel
