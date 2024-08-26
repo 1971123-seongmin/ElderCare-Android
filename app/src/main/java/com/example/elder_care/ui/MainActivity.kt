@@ -29,14 +29,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun setBottomNavigation() {
-        val mainBottomNavigationBar = binding.mainBottomNavigationBar
-        mainBottomNavigationBar.itemIconTintList = null
-
-        val host =
-            supportFragmentManager.findFragmentById(binding.mainNavHostFragment.id) as NavHostFragment
-                ?: return
-        navController = host.navController
-        binding.mainBottomNavigationBar.setupWithNavController(navController)
+//        val mainBottomNavigationBar = binding.mainBottomNavigationBar
+//        mainBottomNavigationBar.itemIconTintList = null
+//
+//        val host =
+//            supportFragmentManager.findFragmentById(binding.mainNavHostFragment.id) as NavHostFragment
+//                ?: return
+//        navController = host.navController
+//        binding.mainBottomNavigationBar.setupWithNavController(navController)
     }
 
     // 권한 요청 결과 처리 런처 초기화 함수

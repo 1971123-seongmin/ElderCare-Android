@@ -16,31 +16,31 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation_bar" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/main_bottom_navigation_bar"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="4dp"
-            android:background="@color/bg_white"
-            app:itemTextColor="@color/black"
-            app:itemBackground="@android:color/transparent"
-            app:itemActiveIndicatorStyle="@android:color/transparent"
-            app:itemIconSize="28dp"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/bottom_menu"
-            style="@style/BottomNavigationView.Active"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/nav_graph" />
+
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            android:id="@+id/main_bottom_navigation_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:paddingStart="24dp"-->
+<!--            android:paddingEnd="24dp"-->
+<!--            android:paddingTop="3dp"-->
+<!--            android:paddingBottom="4dp"-->
+<!--            android:background="@color/bg_white"-->
+<!--            app:itemTextColor="@color/black"-->
+<!--            app:itemBackground="@android:color/transparent"-->
+<!--            app:itemActiveIndicatorStyle="@android:color/transparent"-->
+<!--            app:itemIconSize="28dp"-->
+<!--            app:labelVisibilityMode="labeled"-->
+<!--            app:menu="@menu/bottom_menu"-->
+<!--            style="@style/BottomNavigationView.Active"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
