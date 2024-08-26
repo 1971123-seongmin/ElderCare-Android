@@ -3,18 +3,32 @@
     <style name="Base.Theme.Elder_Care" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:colorBackground">@color/bg_gray</item>
-    </style>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/base_font</item>
 
-    <!-- Status Bar -->
-    <!-- 상태 바 아이콘(true: 검정 / false: 흰색) -->
-    <!--<item name="android:windowLightStatusBar">true</item>-->
-    <!--<item name="android:statusBarColor">@color/white</item>-->
+        <!-- Status Bar -->
+        <item name="android:windowLightStatusBar">true</item> <!-- 상태 바 아이콘(true: 검정 / false: 흰색) -->
+        <item name="android:statusBarColor">@color/white</item>
+
+    </style>
 
     <!-- 커스텀 폰트 -->
     <!--<item name="android:textViewStyle">@style/customEditTextFontStyle</item>-->
     <!--<item name="android:editTextStyle">@style/customEditTextFontStyle</item>-->
     <!--<item name="android:buttonStyle">@style/customButtonFontStyle</item>-->
+
+    <!-- 버튼 ripple 효과 -->
+    <style name="Widget.AppTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <!--  ImageView Style  -->
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
 
     <style name="Theme.Elder_Care" parent="Base.Theme.Elder_Care" />
 
