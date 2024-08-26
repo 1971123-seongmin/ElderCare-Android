@@ -47,7 +47,6 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 hilt-android = {module= "com.google.dagger:hilt-android", version.ref = "hiltAndroid"}
 hilt-android-compiler = {module= "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid"}
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
-okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttp" }
 okhttp-urlconnection = { module = "com.squareup.okhttp3:okhttp-urlconnection", version.ref = "okhttp" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }

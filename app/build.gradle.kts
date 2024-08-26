@@ -66,7 +66,7 @@ dependencies {
 
     // okHttp
     implementation(libs.okhttp)
-    implementation(libs.okhttp.bom)
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
     implementation (libs.logging.interceptor)
     implementation (libs.okhttp.urlconnection)
 
