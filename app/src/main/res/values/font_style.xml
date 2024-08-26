@@ -22,6 +22,13 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <!-- title_medium_19 -->
+    <style name="title_medium_19">
+        <item name="android:fontFamily">@font/notosans_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
     <!-- paragraph_bold_17 -->
     <style name="paragraph_semibold_17">
         <item name="android:fontFamily">@font/notosans_semibold</item>
