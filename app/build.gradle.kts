@@ -66,9 +66,9 @@ dependencies {
 
     // okHttp
     implementation(libs.okhttp)
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
-    implementation ("com.squareup.okhttp3:okhttp-urlconnection:4.12.0")
+    implementation(libs.okhttp.bom)
+    implementation (libs.logging.interceptor)
+    implementation (libs.okhttp.urlconnection)
 
     // retrofit
     implementation(libs.retrofit)
@@ -77,8 +77,13 @@ dependencies {
     // gson
     implementation(libs.gson)
 
+    // Moshi
+    implementation (libs.converter.moshi)
+    implementation (libs.moshi)
+
     // dataStore
-    implementation(libs.androidx.datastore.preferences)
+    implementation (libs.androidx.datastore.preferences)
+    implementation (libs.androidx.datastore.core)
 
     // glide
     implementation(libs.glide)
