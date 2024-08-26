@@ -1,110 +1,126 @@
 package com.example.elder_care.ui
 
-import android.Manifest
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.Settings
 import android.util.Log
-import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.elder_care.base.BaseActivity
 import com.example.elder_care.R
+import com.example.elder_care.base.BaseActivity
 import com.example.elder_care.databinding.ActivityMainBinding
+import com.example.elder_care.utils.permission.PermissionCheckList
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
-    private val REQUEST_PERMISSIONS = 1
-    private val permissions = listOf(
-        Manifest.permission.BLUETOOTH,
-        Manifest.permission.BLUETOOTH_SCAN,
-        Manifest.permission.BLUETOOTH_ADMIN,
-        Manifest.permission.BLUETOOTH_CONNECT,
-        Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.ACCESS_COARSE_LOCATION,
-        Manifest.permission.RECORD_AUDIO
-    )
-
     private lateinit var navController: NavController
+    private lateinit var permissionList : List<String>
+    private lateinit var requestMultiplePermissionsLauncher: ActivityResultLauncher<Array<String>>
 
     override fun setLayout() {
-        checkPermission(permissions)
+        checkPermissions()
         setBottomNavigation()
     }
 
     private fun setBottomNavigation() {
-        binding.mainBottomNavigationBar.itemIconTintList = null
+        val mainBottomNavigationBar = binding.mainBottomNavigationBar
+        mainBottomNavigationBar.itemIconTintList = null
 
         val host =
             supportFragmentManager.findFragmentById(binding.mainNavHostFragment.id) as NavHostFragment
                 ?: return
         navController = host.navController
         binding.mainBottomNavigationBar.setupWithNavController(navController)
-
-        // 최초 실행시 홈 화면
-        binding.mainBottomNavigationBar.selectedItemId = R.id.homeFragment
-        navController.navigate(R.id.homeFragment)
     }
 
-    // 권한 미 허용시 다이얼로그 표시 함수
-    private fun permissionDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.apply {
-            setMessage("앱 사용을 위해 필수인 근처, 마이크 및 위치 권한을 허용해 주세요.")
-            setPositiveButton("설정으로 이동") { dialog, which ->
-                // 설정 화면으로 이동
-                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                val uri = Uri.fromParts("package", packageName, null)
-                intent.data = uri
-                startActivity(intent)
-            }
-            setNegativeButton("취소") { dialog, which ->
-                makeToast("권한을 허용하지 않으면 앱 실행이 불가능합니다.")
+    // 권한 요청 결과 처리 런처 초기화 함수
+    private fun initPermissionLaunchers() {
+        requestMultiplePermissionsLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            Log.d("권한 런처", "Permissions result: $permissions")
+            handlePermissionsResult(permissions)
+        }
+    }
+
+    private fun checkPermissions() {
+        permissionList = PermissionCheckList.permissions
+        initPermissionLaunchers()
+        checkPermissionsAndProceed()
+    }
+
+    // 권한 요청 결과 확인 -> 거부된 권한이 있는 경우 권한 거부 다이얼로그 표시 함수
+    private fun handlePermissionsResult(permissions: Map<String, Boolean>) {
+        val deniedPermissions = permissions.filter { !it.value }
+        if (deniedPermissions.isNotEmpty()){
+            showPermissionDeniedDialog()
+        }
+    }
+
+    // 모든 권한이 허용되었는지 확인하고, 허용되지 않은 경우 권한 요청 다이얼로그 표시 함수
+    private fun checkPermissionsAndProceed() {
+        if (!areAllPermissionsGranted()) {
+            showRequestDialog()
+        }
+    }
+
+    // 권한 확인 함수
+    private fun areAllPermissionsGranted(): Boolean {
+        permissionList = PermissionCheckList.permissions
+        return permissionList.all { permission ->
+            ContextCompat.checkSelfPermission(this@MainActivity, permission) == PackageManager.PERMISSION_GRANTED
+        }
+    }
+
+    // 권한 요청 생성 함수
+    private fun askAllPermissions() {
+        permissionList = PermissionCheckList.permissions
+        requestMultiplePermissionsLauncher.launch(permissionList.toTypedArray())
+    }
+
+    // 시작시 권한 허용 다이얼로그 표시 함수
+    private fun showRequestDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("권한 필요")
+            .setMessage("이 앱을 사용하려면 모든 권한을 허용해야 합니다.")
+            .setPositiveButton("확인") { dialog, _ ->
+                askAllPermissions()
                 dialog.dismiss()
-                finish()
             }
-            setTitle("권한 요청")
-            setCancelable(false) // 다이얼로그 바깥 영역을 터치해도 닫히지 않도록 설정
-            create()
-            show()
-        }
+            .setNegativeButton("취소") { dialog, _ ->
+                dialog.dismiss()
+                this@MainActivity.finish()
+            }
+            .setCancelable(false)
+            .show()
     }
 
-    private fun checkPermission(permissionList: List<String>) {
-
-        val deniedPermissions = permissions.filter   {
-            ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_DENIED
-        }
-
-        if (deniedPermissions.isNotEmpty()) {
-            Log.d("권한", "권한 거부됨, $deniedPermissions")
-            ActivityCompat.requestPermissions(this, deniedPermissions.toTypedArray(), REQUEST_PERMISSIONS)
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        when (requestCode) {
-            REQUEST_PERMISSIONS ->
-                // 권한 요청 결과 확인
-                for (i in permissions.indices) {
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        // 하나 이상의 권한이 거부된 경우
-                        permissionDialog()
-                        return
-                   }
+    // 권한 거부시 권한 요청 다이얼로그 (설정 앱으로 이동)
+    private fun showPermissionDeniedDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("권한 필요")
+            .setMessage("필수 권한이 거부되었습니다. 설정에서 권한을 허용해 주세요.")
+            .setPositiveButton("설정으로 이동") { dialog, _ ->
+                dialog.dismiss()
+                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                    data = Uri.fromParts("package", packageName, null)
                 }
+                startActivity(intent) // 설정 화면으로 이동
             }
-        }
+            .setNegativeButton("취소") { dialog, _ ->
+                dialog.dismiss()
+                this@MainActivity.finish()
+            }
+            .setCancelable(false)
+            .show()
+    }
+
 }
 
 
