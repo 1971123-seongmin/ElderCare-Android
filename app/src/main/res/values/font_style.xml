@@ -2,28 +2,28 @@
 <resources>
 
     <!-- title_semi_bold_36 -->
-    <style name="title_semibold_36">
+    <style name="notosans_title_semibold_36">
         <item name="android:fontFamily">@font/notosans_semibold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">36sp</item>
     </style>
 
     <!-- title_medium_36 -->
-    <style name="title_medium_36">
+    <style name="notosans_title_medium_36">
         <item name="android:fontFamily">@font/notosans_medium</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">36sp</item>
     </style>
 
     <!-- title_medium_24 -->
-    <style name="title_medium_24">
+    <style name="notosans_title_medium_24">
         <item name="android:fontFamily">@font/notosans_medium</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">24sp</item>
     </style>
 
     <!-- title_medium_19 -->
-    <style name="title_medium_19">
+    <style name="notosans_title_medium_19">
         <item name="android:fontFamily">@font/notosans_medium</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">19sp</item>
