@@ -8,6 +8,7 @@
     <color name="bg_white_F3">#F3F5F6</color>
     <color name="bg_gray_30">#4D000000</color>
     <color name="bg_gray_f4">#F4F4F4</color>
+    <color name="bg_green">#17C1A5</color>
 
     <!-- main color & subcolor 메인 버튼 컬러 -->
     <color name="green90">#E617C1A5</color>
