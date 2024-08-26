@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/homeFragment"
-        android:icon="@drawable/nav_home_selector"
-        android:title="홈"/>
-    <item
-        android:id="@+id/actionFragment"
-        android:icon="@drawable/nav_action_selector"
-        android:title="활동"/>
-    <item
-        android:id="@+id/communityFragment"
-        android:icon="@drawable/nav_community_selector"
-        android:title="커뮤니티"/>
-    <item
-        android:id="@+id/settingsFragment"
-        android:icon="@drawable/nav_settings_selector"
-        android:title="설정"/>
+<!--    <item-->
+<!--        android:id="@+id/homeFragment"-->
+<!--        android:title="홈"/>-->
+<!--    <item-->
+<!--        android:id="@+id/actionFragment"-->
+<!--        android:title="활동"/>-->
+<!--    <item-->
+<!--        android:id="@+id/communityFragment"-->
+<!--        android:title="커뮤니티"/>-->
+<!--    <item-->
+<!--        android:id="@+id/settingsFragment"-->
+<!--        android:title="설정"/>-->
+<!--    &lt;!&ndash; android:icon="@drawable/nav_settings_selector" &ndash;&gt;-->
 </menu>
