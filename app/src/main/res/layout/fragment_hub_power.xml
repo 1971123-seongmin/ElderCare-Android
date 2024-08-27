@@ -37,7 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:src="@drawable/ic_hub_info"
+                android:layout_marginStart="48dp"
+                android:src="@drawable/ic_hub_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/fragment_hub_power_outlet_iv"
                 app:layout_constraintTop_toTopOf="@+id/fragment_hub_power_outlet_iv" />
