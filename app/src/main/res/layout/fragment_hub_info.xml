@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.HubInfoFragment">
+
+            <ImageView
+                android:id="@+id/fragment_hub_info_cancel_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="34dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fragment_hub_info_hub_iv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:src="@drawable/ic_hub_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_info_cancel_iv" />
+
+            <TextView
+                android:id="@+id/fragment_hub_info_title_tv"
+                style="@style/notosans_cjk_medium_19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="115dp"
+                android:layout_marginStart="33dp"
+                android:text="허브 정보"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_info_hub_iv" />
+
+            <TextView
+                android:id="@+id/fragment_hub_info_desc_tv"
+                style="@style/noto_sans_cjk_demiLight_13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="33dp"
+                android:breakStrategy="simple"
+                android:text="허브는 보호자와 피보호자를 연결하고 통신 및 데이터를 제공해요."
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_info_title_tv" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_home_guide_btn"
+                style="@style/notosans_cjk_bold_15"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="34dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="33dp"
+                android:background="@drawable/shape_rounded_bg_green_10dp"
+                android:text="다음"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_info_desc_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ripple_bordered_oval"
-                android:src="@drawable/ic_cancel"
+                android:src="@drawable/ic_cancel_oval"
                 android:layout_marginTop="18dp"
                 android:layout_marginEnd="33dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
 
             <TextView
                 android:id="@+id/fragment_home_title_tv"
-                style="@style/notosans_title_medium_19"
+                style="@style/notosans_cjk_medium_19"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="63dp"
@@ -54,7 +54,7 @@
                     android:id="@+id/fragment_home_hub_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_hub"
+                    android:src="@drawable/ic_hub_white"
                     android:layout_marginTop="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,8 +67,7 @@
                     android:layout_marginTop="18dp"
                     android:layout_marginBottom="16dp"
                     android:text="허브 설치"
-                    style="@style/notosans_title_medium_19"
-                    android:textSize="15sp"
+                    style="@style/notosans_cjk_bold_15"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.125"/>
+                    app:layout_constraintGuide_begin="37dp" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/fragment_home_guideline_25"
@@ -223,7 +222,7 @@
 
             <TextView
                 android:id="@+id/fragment_home_add_help_tv"
-                style="@style/notosans_title_medium_19"
+                style="@style/noto_sans_cjk_demiLight_13"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -231,7 +230,6 @@
                 android:layout_marginEnd="34dp"
                 android:breakStrategy="simple"
                 android:text="추가적인 센서를 등록하시려면 활성화된 엘더케어 허브가 필요합니다."
-                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/fragment_home_question_ib"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_const_2" />
@@ -245,14 +243,14 @@
                 android:layout_marginEnd="47dp"
                 android:breakStrategy="simple"
                 android:text="Elder Care의 설치 가이드를 통해\n최적의 배치도를 확인하세요!"
-                style="@style/notosans_title_medium_19"
+                style="@style/notosans_cjk_medium_19"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_add_help_tv" />
 
             <TextView
                 android:id="@+id/fragment_home_sub_desc_tv"
-                style="@style/notosans_title_medium_19"
+                style="@style/noto_sans_cjk_demiLight_13"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
@@ -260,14 +258,14 @@
                 android:layout_marginEnd="47dp"
                 android:breakStrategy="simple"
                 android:text="센서를 배치하는 위치에 따라 성능차이가 발생할 수 있어요."
-                android:textSize="13sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_sub_title_tv" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/fragment_home_guide_btn"
-                style="@style/paragraph_semibold_17"
+                style="@style/notosans_cjk_bold_15"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="20dp"
@@ -276,6 +274,7 @@
                 android:layout_marginEnd="33dp"
                 android:background="@drawable/shape_rounded_bg_green_10dp"
                 android:text="설치 가이드"
+                android:textSize="17sp"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

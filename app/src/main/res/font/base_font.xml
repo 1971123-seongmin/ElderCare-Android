@@ -2,23 +2,32 @@
 <font-family xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- bold -->
+    <font
+        android:font="@font/noto_sans_cjk_kr_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        app:font="@font/noto_sans_cjk_kr_bold"
+        app:fontStyle="normal"
+        app:fontWeight="700"/>
+
     <!--medium-->
     <font
-        android:font="@font/notosans_medium"
+        android:font="@font/noto_sans_cjk_kr_medium"
         android:fontStyle="normal"
         android:fontWeight="500"
-        app:font="@font/notosans_medium"
+        app:font="@font/noto_sans_cjk_kr_medium"
         app:fontStyle="normal"
         app:fontWeight="500"/>
 
-    <!--semibold-->
+    <!--demiLight-->
     <font
-        android:font="@font/notosans_semibold"
+        android:font="@font/noto_sans_cjk_kr_demi_light"
         android:fontStyle="normal"
-        android:fontWeight="600"
-        app:font="@font/notosans_semibold"
+        android:fontWeight="300"
+        app:font="@font/noto_sans_cjk_kr_demi_light"
         app:fontStyle="normal"
-        app:fontWeight="600"/>
+        app:fontWeight="300"/>
 
 
 </font-family>
