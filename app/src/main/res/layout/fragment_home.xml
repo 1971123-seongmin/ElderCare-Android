@@ -54,7 +54,7 @@
                     android:id="@+id/fragment_home_hub_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_hub"
+                    android:src="@drawable/ic_hub_white"
                     android:layout_marginTop="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
