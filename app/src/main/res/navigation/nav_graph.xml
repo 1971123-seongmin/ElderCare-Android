@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.elder_care.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_hubInfoFragment"
+            app:destination="@id/hubInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.example.elder_care.ui.community.CommunityFragment"
@@ -25,4 +29,50 @@
         android:name="com.example.elder_care.ui.action.ActionFragment"
         android:label="fragment_action"
         tools:layout="@layout/fragment_action" />
+
+    <fragment
+        android:id="@+id/hubInfoFragment"
+        android:name="com.example.elder_care.ui.home.HubInfoFragment"
+        android:label="HubInfoFragment"
+        tools:layout="@layout/fragment_hub_info">
+        <action
+            android:id="@+id/action_hubInfoFragment_to_hubPlacementFragment"
+            app:destination="@id/hubPlacementFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/hubPlacementFragment"
+        android:name="com.example.elder_care.ui.home.HubPlacementFragment"
+        android:label="HubPlacementFragment"
+        tools:layout="@layout/fragment_hub_placement">
+        <action
+            android:id="@+id/action_hubPlacementFragment_to_hubPowerFragment"
+            app:destination="@id/hubPowerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hubPowerFragment"
+        android:name="com.example.elder_care.ui.home.HubPowerFragment"
+        android:label="HubPowerFragment"
+        tools:layout="@layout/fragment_hub_power">
+        <action
+            android:id="@+id/action_hubPowerFragment_to_hubWiFiConnectionFragment"
+            app:destination="@id/hubWiFiConnectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hubWiFiConnectionFragment"
+        android:name="com.example.elder_care.ui.home.HubWiFiConnectionFragment"
+        android:label="HubWiFiConnectionFragment"
+        tools:layout="@layout/fragment_hub_wifi_connection">
+        <action
+            android:id="@+id/action_hubWiFiConnectionFragment_to_hubNetworkSelectionFragment"
+            app:destination="@id/hubNetworkSelectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hubNetworkSelectionFragment"
+        android:name="com.example.elder_care.ui.home.HubNetworkSelectionFragment"
+        android:label="HubNetworkSelectionFragment"
+        tools:layout="@layout/fragment_hub_network_selection"/>
 </navigation>
