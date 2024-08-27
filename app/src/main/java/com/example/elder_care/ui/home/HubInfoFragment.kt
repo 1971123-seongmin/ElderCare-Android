@@ -1,23 +1,26 @@
 package com.example.elder_care.ui.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
+import com.example.elder_care.base.BaseFragment
+import com.example.elder_care.databinding.FragmentHubInfoBinding
+import com.example.elder_care.utils.extension.navigateSafe
 
-class HubInfoFragment : Fragment() {
+class HubInfoFragment : BaseFragment<FragmentHubInfoBinding>(R.layout.fragment_hub_info) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setLayout() {
+        initSetting()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_hub_info, container, false)
+    private fun initSetting() {
+        setButton()
+    }
+
+    private fun setButton() {
+        binding.fragmentHomeGuideBtn.setOnClickListener {
+            val action = HubInfoFragmentDirections.actionHubInfoFragmentToHubPlacementFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
     }
 
 }

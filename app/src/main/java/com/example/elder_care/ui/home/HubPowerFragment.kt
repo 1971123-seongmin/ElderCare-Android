@@ -1,25 +1,27 @@
 package com.example.elder_care.ui.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
+import com.example.elder_care.base.BaseFragment
+import com.example.elder_care.databinding.FragmentHubPowerBinding
+import com.example.elder_care.utils.extension.navigateSafe
 
 
-class HubPowerFragment : Fragment() {
+class HubPowerFragment : BaseFragment<FragmentHubPowerBinding>(R.layout.fragment_hub_power) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun setLayout() {
+        setButton()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_hub_power, container, false)
+    private fun initSetting() {
+        setButton()
+    }
+
+    private fun setButton() {
+        binding.fragmentHomeGuideBtn.setOnClickListener {
+            val action = HubPowerFragmentDirections.actionHubPowerFragmentToHubWiFiConnectionFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
     }
 
 }

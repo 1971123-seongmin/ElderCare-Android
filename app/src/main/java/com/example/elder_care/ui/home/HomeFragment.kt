@@ -2,11 +2,13 @@ package com.example.elder_care.ui.home
 
 import androidx.core.view.MenuHost
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
 import com.example.elder_care.base.BaseFragment
 import com.example.elder_care.databinding.FragmentHomeBinding
 import com.example.elder_care.utils.bluetooth.BluetoothDataViewModel
 import com.example.elder_care.utils.bluetooth.BluetoothManager
+import com.example.elder_care.utils.extension.navigateSafe
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
@@ -15,11 +17,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val bluetoothDataViewModel by activityViewModels<BluetoothDataViewModel>()
 
     override fun setLayout() {
-
+        initSetting()
     }
 
     private fun initSetting() {
+        setButton()
+    }
 
+    private fun setButton() {
+        binding.fragmentHomeGuideBtn.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToHubInfoFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
     }
 
 //    private fun setBlueTooth() {
