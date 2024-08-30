@@ -1,4 +1,4 @@
-package com.example.elder_care.ui.home
+package com.example.elder_care.ui.home.hub
 
 import androidx.core.view.MenuHost
 import androidx.fragment.app.activityViewModels
@@ -10,7 +10,7 @@ import com.example.elder_care.utils.bluetooth.BluetoothDataViewModel
 import com.example.elder_care.utils.bluetooth.BluetoothManager
 import com.example.elder_care.utils.extension.navigateSafe
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class HubHomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_hub_home) {
 
     private lateinit var menuHost: MenuHost
     private lateinit var bluetoothManager: BluetoothManager

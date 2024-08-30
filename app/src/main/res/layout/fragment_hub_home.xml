@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bg_white"
-            tools:context=".ui.home.HomeFragment">
+            tools:context=".ui.home.hub.HubHomeFragment">
 
             <ImageButton
                 android:id="@+id/fragment_home_cancel_ib"

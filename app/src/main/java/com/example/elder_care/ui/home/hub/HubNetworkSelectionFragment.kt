@@ -1,4 +1,4 @@
-package com.example.elder_care.ui.home
+package com.example.elder_care.ui.home.hub
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

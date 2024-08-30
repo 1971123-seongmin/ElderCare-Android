@@ -1,15 +1,15 @@
-package com.example.elder_care.ui.home
+package com.example.elder_care.ui.home.hub
 
 import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
 import com.example.elder_care.base.BaseFragment
-import com.example.elder_care.databinding.FragmentHubPlacementBinding
+import com.example.elder_care.databinding.FragmentHubInfoBinding
 import com.example.elder_care.utils.extension.navigateSafe
 
-class HubPlacementFragment : BaseFragment<FragmentHubPlacementBinding>(R.layout.fragment_hub_placement) {
+class HubInfoFragment : BaseFragment<FragmentHubInfoBinding>(R.layout.fragment_hub_info) {
 
     override fun setLayout() {
-        setButton()
+        initSetting()
     }
 
     private fun initSetting() {
@@ -18,7 +18,7 @@ class HubPlacementFragment : BaseFragment<FragmentHubPlacementBinding>(R.layout.
 
     private fun setButton() {
         binding.fragmentHomeGuideBtn.setOnClickListener {
-            val action = HubPlacementFragmentDirections.actionHubPlacementFragmentToHubPowerFragment()
+            val action = HubInfoFragmentDirections.actionHubInfoFragmentToHubPlacementFragment()
             findNavController().navigateSafe(action.actionId)
         }
     }
