@@ -75,4 +75,14 @@
         android:name="com.example.elder_care.ui.install_guide.HubNetworkSelectionFragment"
         android:label="HubNetworkSelectionFragment"
         tools:layout="@layout/fragment_hub_network_selection"/>
+    <fragment
+        android:id="@+id/hubDownLoadFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubDownLoadFragment"
+        android:label="HubDownLoadFragment"
+        tools:layout="@layout/fragment_hub_down_load_fragment"/>
+    <fragment
+        android:id="@+id/hubOnlineFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubOnlineFragment"
+        android:label="HubOnlineFragment"
+        tools:layout="@layout/fragment_hub_online"/>
 </navigation>

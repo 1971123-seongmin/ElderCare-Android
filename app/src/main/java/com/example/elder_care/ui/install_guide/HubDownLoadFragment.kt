@@ -17,6 +17,6 @@ class HubDownLoadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_hub_down_load_frgment, container, false)
+        return inflater.inflate(R.layout.fragment_hub_down_load_fragment, container, false)
     }
 }
