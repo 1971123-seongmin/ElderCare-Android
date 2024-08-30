@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/HubHomeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/HubHomeFragment"
         android:name="com.example.elder_care.ui.install_guide.HubHomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_hub_home">
         <action
-            android:id="@+id/action_homeFragment_to_hubInfoFragment"
+            android:id="@+id/action_HubHomeFragment_to_hubInfoFragment"
             app:destination="@id/hubInfoFragment" />
     </fragment>
     <fragment
