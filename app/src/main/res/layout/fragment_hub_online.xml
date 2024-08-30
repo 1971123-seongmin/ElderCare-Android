@@ -10,7 +10,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.home.hub.HubOnlineFragment">
+            tools:context=".ui.install_guide.HubOnlineFragment">
 
             <ImageView
                 android:id="@+id/fragment_hub_online_cancel_iv"

@@ -1,12 +1,13 @@
-package com.example.elder_care.ui.home.hub
+package com.example.elder_care.ui.install_guide
 
 import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
 import com.example.elder_care.base.BaseFragment
-import com.example.elder_care.databinding.FragmentHubWifiConnectionBinding
+import com.example.elder_care.databinding.FragmentHubPowerBinding
 import com.example.elder_care.utils.extension.navigateSafe
 
-class HubWiFiConnectionFragment : BaseFragment<FragmentHubWifiConnectionBinding>(R.layout.fragment_hub_wifi_connection) {
+
+class HubPowerFragment : BaseFragment<FragmentHubPowerBinding>(R.layout.fragment_hub_power) {
 
     override fun setLayout() {
         setButton()
@@ -18,7 +19,7 @@ class HubWiFiConnectionFragment : BaseFragment<FragmentHubWifiConnectionBinding>
 
     private fun setButton() {
         binding.fragmentHomeGuideBtn.setOnClickListener {
-            val action = HubWiFiConnectionFragmentDirections.actionHubWiFiConnectionFragmentToHubNetworkSelectionFragment()
+            val action = HubPowerFragmentDirections.actionHubPowerFragmentToHubWiFiConnectionFragment()
             findNavController().navigateSafe(action.actionId)
         }
     }

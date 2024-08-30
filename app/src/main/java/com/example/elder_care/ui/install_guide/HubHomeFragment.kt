@@ -1,4 +1,4 @@
-package com.example.elder_care.ui.home.hub
+package com.example.elder_care.ui.install_guide
 
 import androidx.core.view.MenuHost
 import androidx.fragment.app.activityViewModels

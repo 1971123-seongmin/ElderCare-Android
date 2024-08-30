@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubHomeFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubHomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_hub_home">
         <action
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/hubInfoFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubInfoFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubInfoFragment"
         android:label="HubInfoFragment"
         tools:layout="@layout/fragment_hub_info">
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/hubPlacementFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubPlacementFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubPlacementFragment"
         android:label="HubPlacementFragment"
         tools:layout="@layout/fragment_hub_placement">
         <action
@@ -52,7 +52,7 @@
 
     <fragment
         android:id="@+id/hubPowerFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubPowerFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubPowerFragment"
         android:label="HubPowerFragment"
         tools:layout="@layout/fragment_hub_power">
         <action
@@ -62,7 +62,7 @@
 
     <fragment
         android:id="@+id/hubWiFiConnectionFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubWiFiConnectionFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubWiFiConnectionFragment"
         android:label="HubWiFiConnectionFragment"
         tools:layout="@layout/fragment_hub_wifi_connection">
         <action
@@ -72,7 +72,7 @@
 
     <fragment
         android:id="@+id/hubNetworkSelectionFragment"
-        android:name="com.example.elder_care.ui.home.hub.HubNetworkSelectionFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubNetworkSelectionFragment"
         android:label="HubNetworkSelectionFragment"
         tools:layout="@layout/fragment_hub_network_selection"/>
 </navigation>
