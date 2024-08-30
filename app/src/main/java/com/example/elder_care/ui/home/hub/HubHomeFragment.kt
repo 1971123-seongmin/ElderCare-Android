@@ -5,12 +5,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R
 import com.example.elder_care.base.BaseFragment
-import com.example.elder_care.databinding.FragmentHomeBinding
+import com.example.elder_care.databinding.FragmentHubHomeBinding
 import com.example.elder_care.utils.bluetooth.BluetoothDataViewModel
 import com.example.elder_care.utils.bluetooth.BluetoothManager
 import com.example.elder_care.utils.extension.navigateSafe
 
-class HubHomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_hub_home) {
+class HubHomeFragment : BaseFragment<FragmentHubHomeBinding>(R.layout.fragment_hub_home) {
 
     private lateinit var menuHost: MenuHost
     private lateinit var bluetoothManager: BluetoothManager
@@ -26,7 +26,7 @@ class HubHomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_hub_
 
     private fun setButton() {
         binding.fragmentHomeGuideBtn.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToHubInfoFragment()
+            val action = HubHomeFragmentDirections.actionHomeFragmentToHubInfoFragment()
             findNavController().navigateSafe(action.actionId)
         }
     }
