@@ -1,4 +1,4 @@
-package com.example.elder_care.ui.home
+package com.example.elder_care.ui.install_guide
 
 import androidx.navigation.fragment.findNavController
 import com.example.elder_care.R

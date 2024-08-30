@@ -1,4 +1,4 @@
-package com.example.elder_care.ui.home
+package com.example.elder_care.ui.install_guide
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.elder_care.R
 
-class HubNetworkSelectionFragment : Fragment() {
+class HubDownLoadFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +17,6 @@ class HubNetworkSelectionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_hub_network_selection, container, false)
+        return inflater.inflate(R.layout.fragment_hub_down_load_fragment, container, false)
     }
-
 }

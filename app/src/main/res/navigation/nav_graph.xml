@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/hubHomeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.elder_care.ui.home.HomeFragment"
+        android:id="@+id/hubHomeFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubHomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_hub_home">
         <action
-            android:id="@+id/action_homeFragment_to_hubInfoFragment"
+            android:id="@+id/action_HubHomeFragment_to_hubInfoFragment"
             app:destination="@id/hubInfoFragment" />
     </fragment>
     <fragment
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/hubInfoFragment"
-        android:name="com.example.elder_care.ui.home.HubInfoFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubInfoFragment"
         android:label="HubInfoFragment"
         tools:layout="@layout/fragment_hub_info">
         <action
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/hubPlacementFragment"
-        android:name="com.example.elder_care.ui.home.HubPlacementFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubPlacementFragment"
         android:label="HubPlacementFragment"
         tools:layout="@layout/fragment_hub_placement">
         <action
@@ -52,7 +52,7 @@
 
     <fragment
         android:id="@+id/hubPowerFragment"
-        android:name="com.example.elder_care.ui.home.HubPowerFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubPowerFragment"
         android:label="HubPowerFragment"
         tools:layout="@layout/fragment_hub_power">
         <action
@@ -62,7 +62,7 @@
 
     <fragment
         android:id="@+id/hubWiFiConnectionFragment"
-        android:name="com.example.elder_care.ui.home.HubWiFiConnectionFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubWiFiConnectionFragment"
         android:label="HubWiFiConnectionFragment"
         tools:layout="@layout/fragment_hub_wifi_connection">
         <action
@@ -72,7 +72,17 @@
 
     <fragment
         android:id="@+id/hubNetworkSelectionFragment"
-        android:name="com.example.elder_care.ui.home.HubNetworkSelectionFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubNetworkSelectionFragment"
         android:label="HubNetworkSelectionFragment"
         tools:layout="@layout/fragment_hub_network_selection"/>
+    <fragment
+        android:id="@+id/hubDownLoadFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubDownLoadFragment"
+        android:label="HubDownLoadFragment"
+        tools:layout="@layout/fragment_hub_down_load_fragment"/>
+    <fragment
+        android:id="@+id/hubOnlineFragment"
+        android:name="com.example.elder_care.ui.install_guide.HubOnlineFragment"
+        android:label="HubOnlineFragment"
+        tools:layout="@layout/fragment_hub_online"/>
 </navigation>

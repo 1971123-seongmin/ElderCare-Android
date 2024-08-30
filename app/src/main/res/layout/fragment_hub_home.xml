@@ -11,7 +11,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bg_white"
-            tools:context=".ui.home.HomeFragment">
+            tools:context=".ui.install_guide.HubHomeFragment">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bluetooth_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green30"
+                android:text="블루투스"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bluetooth_get_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green60"
+                android:layout_marginStart="20dp"
+                android:text="on/off"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bluetooth_btn"
+                app:layout_constraintStart_toEndOf="@+id/bluetooth_btn"
+                app:layout_constraintTop_toTopOf="@+id/bluetooth_btn" />
 
             <ImageButton
                 android:id="@+id/fragment_home_cancel_ib"

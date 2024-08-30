@@ -10,10 +10,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.install_guide.HubPowerFragment">
+            tools:context=".ui.install_guide.HubDownLoadFragment">
 
             <ImageView
-                android:id="@+id/fragment_hub_power_cancel_iv"
+                android:id="@+id/fragment_hub_down_load_cancel_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_cancel"
@@ -23,70 +23,69 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/fragment_hub_power_outlet_iv"
-                android:layout_width="wrap_content"
+                android:id="@+id/fragment_hub_down_load_line_iv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="130dp"
-                android:src="@drawable/ic_power_outlet"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_power_cancel_iv" />
-
-            <ImageView
-                android:id="@+id/fragment_hub_power_hub_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_marginStart="48dp"
-                android:src="@drawable/ic_hub_color"
+                android:layout_marginTop="350dp"
+                android:src="@drawable/ic_hub_line"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragment_hub_power_outlet_iv"
-                app:layout_constraintTop_toTopOf="@+id/fragment_hub_power_outlet_iv" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            
+            <ImageView
+                android:id="@+id/fragment_hub_down_load_hub_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:src="@drawable/ic_hub_cloud_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/fragment_hub_power_title_tv"
+                android:id="@+id/fragment_hub_down_load_title_tv"
                 style="@style/notosans_cjk_medium_19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="41dp"
                 android:layout_marginStart="33dp"
-                android:text="허브 전원 연결"
+                android:text="필수 데이터 다운로드 중"
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_power_hub_iv" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_down_load_hub_iv" />
 
             <TextView
-                android:id="@+id/fragment_hub_power_desc_tv"
+                android:id="@+id/fragment_hub_down_load_desc_tv"
                 style="@style/noto_sans_cjk_demiLight_13"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginStart="33dp"
-                android:layout_marginEnd="47dp"
+                android:layout_marginEnd="66dp"
                 android:breakStrategy="simple"
-                android:text="엘더케어 서비스 시작을 위해 허브의 전원을 연결해주세요! 당신이 아끼는 이와의 통신과 데이터를 제공 해드릴게요!"
+                android:text="엘더케어 허브가 필수 데이터를 다운로드 중이에요. 조금만 기다려주세요!"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_power_title_tv" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_down_load_title_tv" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/fragment_home_guide_btn"
                 style="@style/notosans_cjk_bold_15"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginBottom="34dp"
                 android:layout_marginStart="33dp"
                 android:layout_marginEnd="33dp"
                 android:background="@drawable/shape_rounded_bg_green_10dp"
-                android:text="다음"
+                android:text="계속하기"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_power_desc_tv" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_down_load_desc_tv" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
