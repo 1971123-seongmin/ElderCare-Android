@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.hub.HubOnlineFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.hub.HubOnlineFragment">
+
+            <ImageView
+                android:id="@+id/fragment_hub_online_cancel_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="34dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/fragment_hub_online_hub_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                android:src="@drawable/ic_hub_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_hub_online_title_tv"
+                style="@style/notosans_cjk_medium_19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="41dp"
+                android:layout_marginStart="33dp"
+                android:text="엘더케어 허브가 온라인 상태입니다!"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_online_hub_iv" />
+
+            <TextView
+                android:id="@+id/fragment_hub_online_desc_tv"
+                style="@style/noto_sans_cjk_demiLight_13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="66dp"
+                android:breakStrategy="simple"
+                android:text="허브가 WI-FI 네트워크와 연결되었어요. 지금부턴 엘더케어가 당신의 소중한 사람을 보호할게요!"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_online_title_tv" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_home_guide_btn"
+                style="@style/notosans_cjk_bold_15"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="34dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="33dp"
+                android:background="@drawable/shape_rounded_bg_green_10dp"
+                android:text="계속하기"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_hub_online_desc_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
