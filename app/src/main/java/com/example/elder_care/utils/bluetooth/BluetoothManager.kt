@@ -45,10 +45,6 @@ class BluetoothManager(private val context: Context) {
         setupBroadcastReceiver()
     }
 
-    fun getUUID(): String {
-        return Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
-    }
-
     private fun setupBroadcastReceiver() {
         broadcastReceiver = object : BroadcastReceiver() {
             @RequiresApi(Build.VERSION_CODES.TIRAMISU)
