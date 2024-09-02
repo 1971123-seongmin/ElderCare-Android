@@ -11,7 +11,6 @@ import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
 import java.util.UUID
 
-@SuppressLint("MissingPermission")
 class ConnectThread(
     private val myUUID: UUID,
     private val device: BluetoothDevice,
@@ -51,29 +50,17 @@ class ConnectThread(
             inputStream = socket.inputStream
             outputStream = socket.outputStream
 
-            val stringBuilder = StringBuilder()
-            val buffer = ByteArray(10)
+            val buffer = ByteArray(1024)
             var bytes: Int
 
             while (true) {
                 try {
                     bytes = inputStream.read(buffer)
                     Log.d("BluetoothService", "Bytes read: $bytes")
-                    Log.d("BluetoothService", "Raw data bytes: ${buffer.joinToString(", ") { it.toUByte().toString(16) }}")
 
                     if (bytes > 0) {
-                        val receivedData = String(buffer, 0, bytes, Charsets.UTF_8)
-                        val cleanedData = receivedData.trim()
-                        Log.d(TAG, "cleanedData data chunk: $cleanedData")
-                        //stringBuilder.append(receivedData)
-
-                        stringBuilder.append(cleanedData) // Option 2: 각 바이트 처리
-
-                        if (receivedData.endsWith("\n")) { // Option 1: 완전한 문자열 확인
-                            val completeMessage = stringBuilder.toString().trim()
-                            //viewModel.addConnectedDeviceData(completeMessage)
-                            stringBuilder.setLength(0) // Clear for next message
-                        }
+                        val receivedData = String(buffer, 0, bytes, Charsets.UTF_8).trim()
+                        Log.d(TAG, "Received: $receivedData")
                     }
 
                 } catch (e: IOException) {
