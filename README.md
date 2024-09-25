@@ -2,9 +2,6 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2e649742-07da-4873-b542-fb1cb65e1552" alt="엘더케어"/>
 </p> 
-<div align="center">
- 치매 환자를 위한 실시간 응급 대응 앱
-</div>
 
 ## 목차
   - [개요](#개요)
